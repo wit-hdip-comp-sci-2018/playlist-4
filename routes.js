@@ -9,8 +9,12 @@ const playlist = require('./controllers/playlist.js');
 
 router.get('/', dashboard.index);
 router.get('/dashboard', dashboard.index);
+router.get('/dashboard/deleteplaylist/:id', dashboard.deletePlaylist);
+router.post('/dashboard/addplaylist', dashboard.addPlaylist);
+
 router.get('/about', about.index);
 router.get('/playlist/:id', playlist.index);
 router.get('/playlist/:id/deletesong/:songid', playlist.deleteSong);
+router.post('/playlist/:id/addsong', playlist.addSong);
 
 module.exports = router;
